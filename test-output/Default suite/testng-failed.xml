@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="root.selenium.SeleniumIntro">
+      <class name="listenTestNg.ListenerTest">
         <methods>
-          <include name="Test1"/>
+          <include name="testFailure"/>
+          <include name="testSkipped"/>
         </methods>
-      </class> <!-- root.selenium.SeleniumIntro -->
+      </class> <!-- listenTestNg.ListenerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,4 +1,4 @@
-package dataDesign.testing;
+package dataDrivenDesign.testing;
 
 public class Student {
    private int id ;

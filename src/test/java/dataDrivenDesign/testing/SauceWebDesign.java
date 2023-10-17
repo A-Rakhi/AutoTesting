@@ -1,9 +1,10 @@
-package dataDesign.testing;
+package dataDrivenDesign.testing;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -11,9 +12,10 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SauceDemo {
+public class SauceWebDesign {
 
  private WebDriver driver;
+ 
   
  @BeforeMethod
    void setup() {
@@ -38,7 +40,14 @@ public class SauceDemo {
 	   user.sendKeys(username);
 	   pwd.sendKeys(password);
 	   Thread.sleep(2000);
+	   
 	   loginBtn.click();
+	   Thread.sleep(2000);
+	   
+	   this.driver.findElement(By.id("react-burger-menu-btn")).click();
+	   String logoutLink = this.driver.findElement(By.id("logout_sidebar_link")).getText();
+	   System.out.println("Logout: "+logoutLink);
+	   Assert.assertEquals(logoutLink, "Logout"); 
    } 
    
    @DataProvider(name="dataSet")
@@ -52,12 +61,5 @@ public class SauceDemo {
 	   };
 	return data;
    }
-   
-   public static void main(String[] args) {
-		String file = "D:\\Program Files\\Rakhi\\eclipse-workspace\\AutoTesting\\data\\dataExcel.xlsx";
-		String sheetName = "dataSheet";
-		ExcelHandler ex = new ExcelHandler(file, sheetName);
-		System.out.println(ex.getRowNum());
-	}
    
 }

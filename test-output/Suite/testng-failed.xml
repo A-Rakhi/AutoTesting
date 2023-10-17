@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="a" value="10"/>
+  <parameter name="b" value="7"/>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="params.MathUtils">
+        <methods>
+          <include name="subtraction"/>
+        </methods>
+      </class> <!-- params.MathUtils -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
